@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const userSchema = mongoose.Schema({
     username : {
         type : String,
-        default : "Default User"
+        required : true
     },
     email : {
         type : String,
@@ -13,6 +13,10 @@ const userSchema = mongoose.Schema({
     password : {
         type : String,
         required : true
+    },
+    isAdmin : {
+        type : Boolean,
+        default : false
     }
 }, {
     timestamps : true
